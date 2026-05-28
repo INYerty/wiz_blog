@@ -2,9 +2,9 @@ FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY pom.xml ./
 COPY src ./src
-RUN mvn -B -DskipTests package \\
-    && JAR_FILE=$(ls -1 target/*.jar | grep -v 'original-' | head -n 1) \\
-    && cp \"$JAR_FILE\" /app/app.jar
+RUN mvn -B -DskipTests package \
+    && JAR_FILE=$(ls -1 target/*.jar | grep -v 'original-' | head -n 1) \
+    && cp "$JAR_FILE" /app/app.jar
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
