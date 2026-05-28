@@ -20,3 +20,12 @@ docker run --rm -p 8080:8080 --name wiz_blog -e SPRING_DATASOURCE_URL="jdbc:mysq
 
 如需连接外部 MySQL/Redis，可通过环境变量覆盖 Spring 配置（例如 `SPRING_DATASOURCE_URL`、`SPRING_DATASOURCE_USERNAME`、`SPRING_DATASOURCE_PASSWORD`、`SPRING_DATA_REDIS_HOST` 等）。
 
+前端文件需自行运行:
+进入到frontend文件夹，打开cmd，输入：
+```
+# 安装依赖
+npm install
+
+# 运行
+npm run dev
+```
